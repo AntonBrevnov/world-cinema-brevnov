@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="primaryButtonStyle">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+    <style name="secondaryButtonStyle">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">#EF3A01</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+</resources>
