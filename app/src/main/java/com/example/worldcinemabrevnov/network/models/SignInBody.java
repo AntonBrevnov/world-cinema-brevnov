@@ -8,6 +8,11 @@ public class SignInBody {
     @SerializedName("password")
     private String password;
 
+    public SignInBody(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
+
     public String getEmail() {
         return email;
     }

@@ -24,6 +24,8 @@ public class ApiHandler {
                 .addConverterFactory(GsonConverterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
+
+        ErrorUtils.retrofit = retrofit;
     }
 
     public static ApiHandler getInstance() {

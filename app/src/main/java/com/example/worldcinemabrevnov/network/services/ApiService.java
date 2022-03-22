@@ -4,6 +4,7 @@ import com.example.worldcinemabrevnov.network.models.SignInBody;
 import com.example.worldcinemabrevnov.network.models.SignInResponse;
 import com.example.worldcinemabrevnov.network.models.SignUpBody;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
@@ -13,5 +14,5 @@ public interface ApiService {
     Call<SignInResponse> doSignInRequest(@Body SignInBody signInBody);
 
     @POST("/auth/register")
-    Call<Void> doSignUpRequest(@Body SignUpBody signUpBody);
+    Call<ResponseBody> doSignUpRequest(@Body SignUpBody signUpBody);
 }
