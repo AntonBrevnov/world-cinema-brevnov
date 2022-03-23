@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">WorldCinemaBrevnov</string>
     <string name="email_input_label">E-mail</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_home">Главная</string>
+    <string name="title_query">Подборка</string>
+    <string name="title_favorite">Коллекции</string>
+    <string name="title_profile">Профиль</string>
 </resources>
