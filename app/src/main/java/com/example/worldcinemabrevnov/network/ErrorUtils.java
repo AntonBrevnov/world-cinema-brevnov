@@ -1,5 +1,7 @@
 package com.example.worldcinemabrevnov.network;
 
+import android.util.Log;
+
 import com.example.worldcinemabrevnov.network.models.APIError;
 
 import java.io.IOException;
@@ -20,7 +22,9 @@ public class ErrorUtils {
 
         try {
             error = converter.convert(response.errorBody());
+            Log.d("APIError", error.message());
         } catch (IOException e) {
+            Log.d("APIError", e.getMessage());
             return new APIError("Произошла неизвестная ошибка! Попробуйте позже");
         }
 

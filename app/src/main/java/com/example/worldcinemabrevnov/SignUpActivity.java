@@ -77,7 +77,7 @@ public class SignUpActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                         if (response.isSuccessful()) {
-                            startActivity(new Intent(SignUpActivity.this, SignUpActivity.class));
+                            startActivity(new Intent(SignUpActivity.this, SignInActivity.class));
                         } else if (response.code() == 400) {
                             String serverErrorMessage = ErrorUtils.parseError(response).message();
                             Toast.makeText(getApplicationContext(), serverErrorMessage, Toast.LENGTH_SHORT).show();

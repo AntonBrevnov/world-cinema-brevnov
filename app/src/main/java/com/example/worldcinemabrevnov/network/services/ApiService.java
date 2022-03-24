@@ -1,13 +1,21 @@
 package com.example.worldcinemabrevnov.network.services;
 
+import com.example.worldcinemabrevnov.network.models.MovieResponse;
 import com.example.worldcinemabrevnov.network.models.SignInBody;
 import com.example.worldcinemabrevnov.network.models.SignInResponse;
 import com.example.worldcinemabrevnov.network.models.SignUpBody;
+import com.example.worldcinemabrevnov.network.models.UserResponse;
+
+import java.util.List;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.GET;
+import retrofit2.http.Header;
+import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 public interface ApiService {
     @POST("/auth/login")
@@ -15,4 +23,10 @@ public interface ApiService {
 
     @POST("/auth/register")
     Call<ResponseBody> doSignUpRequest(@Body SignUpBody signUpBody);
+
+    @GET("/movies")
+    Call<List<MovieResponse>> fetchMovies(@Query("filter") String filter);
+
+    @GET("/user")
+    Call<UserResponse> fetchUserData();
 }
