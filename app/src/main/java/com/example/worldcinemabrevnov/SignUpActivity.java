@@ -10,11 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.worldcinemabrevnov.data.DataManager;
 import com.example.worldcinemabrevnov.network.ApiHandler;
 import com.example.worldcinemabrevnov.network.ErrorUtils;
-import com.example.worldcinemabrevnov.network.models.SignInBody;
-import com.example.worldcinemabrevnov.network.models.SignInResponse;
 import com.example.worldcinemabrevnov.network.models.SignUpBody;
 import com.example.worldcinemabrevnov.network.services.ApiService;
 

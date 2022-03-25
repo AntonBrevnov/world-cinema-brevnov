@@ -3,6 +3,7 @@ package com.example.worldcinemabrevnov;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -28,6 +29,8 @@ public class SignInActivity extends AppCompatActivity {
     private Button mSignInButton;
     private Button mSignUpButton;
 
+    private SharedPreferences localStorage;
+
     private ApiService service = ApiHandler.getInstance().getService();
 
     @Override
@@ -35,7 +38,10 @@ public class SignInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
+        localStorage = getSharedPreferences("WCLS", MODE_PRIVATE);
         InitUI();
+
+        checkToAuthorize();
     }
 
     private void InitUI() {
@@ -59,15 +65,30 @@ public class SignInActivity extends AppCompatActivity {
         });
     }
 
+    private void checkToAuthorize() {
+        if (!localStorage.getString("token", "").equals("")) {
+            DataManager.setToken(localStorage.getString("token", ""));
+
+            startActivity(new Intent(SignInActivity.this, MainActivity.class));
+            finish();
+        }
+    }
+
     private void handleSignInButtonClick() {
         AsyncTask.execute(() -> {
             service.doSignInRequest(getSignInData()).enqueue(new Callback<SignInResponse>() {
                 @Override
                 public void onResponse(Call<SignInResponse> call, Response<SignInResponse> response) {
 
-                    if (response.isSuccessful()){
+                    if (response.isSuccessful()) {
+
                         DataManager.setToken(response.body().getToken());
+                        SharedPreferences.Editor editor = localStorage.edit();
+                        editor.putString("token", response.body().getToken());
+                        editor.commit();
+
                         startActivity(new Intent(SignInActivity.this, MainActivity.class));
+                        finish();
                     } else if (response.code() == 400) {
                         String serverErrorMessage = ErrorUtils.parseError(response).message();
                         Toast.makeText(getApplicationContext(), serverErrorMessage, Toast.LENGTH_SHORT).show();

@@ -5,6 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/black"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -129,6 +130,15 @@
                 android:textSize="14dp"
                 android:textStyle="bold" />
         </LinearLayout>
+
+        <Button
+            android:id="@+id/sign_out_button"
+            style="@style/secondaryButtonStyle"
+            android:background="@drawable/secondary_button_rounded"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="Выход" />
 
     </LinearLayout>
 

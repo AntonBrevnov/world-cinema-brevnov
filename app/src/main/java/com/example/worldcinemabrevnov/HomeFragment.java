@@ -5,7 +5,9 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.PagerSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.SnapHelper;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -54,7 +56,6 @@ public class HomeFragment extends Fragment {
     }
 
     private void InitUI(View view) {
-
         mMoviesContainer = view.findViewById(R.id.mainMoviesContainer);
     }
 
@@ -67,9 +68,11 @@ public class HomeFragment extends Fragment {
                         mMovies = response.body();
                         moviesListAdapter = new MoviesListAdapter(getContext(), mMovies);
 
+                        SnapHelper snapHelper = new PagerSnapHelper();
                         LinearLayoutManager manager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
                         mMoviesContainer.setLayoutManager(manager);
                         mMoviesContainer.setAdapter(moviesListAdapter);
+                        snapHelper.attachToRecyclerView(mMoviesContainer);
                     } else if (response.code() == 400) {
                         String serverErrorMessage = ErrorUtils.parseError(response).message();
                         Toast.makeText(getContext(), serverErrorMessage, Toast.LENGTH_SHORT).show();

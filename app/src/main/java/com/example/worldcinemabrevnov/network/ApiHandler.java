@@ -1,5 +1,7 @@
 package com.example.worldcinemabrevnov.network;
 
+import android.content.SharedPreferences;
+
 import com.example.worldcinemabrevnov.data.DataManager;
 import com.example.worldcinemabrevnov.network.services.ApiService;
 

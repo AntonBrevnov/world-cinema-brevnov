@@ -28,5 +28,5 @@ public interface ApiService {
     Call<List<MovieResponse>> fetchMovies(@Query("filter") String filter);
 
     @GET("/user")
-    Call<UserResponse> fetchUserData();
+    Call<List<UserResponse>> fetchUserData();
 }
