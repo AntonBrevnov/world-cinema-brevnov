@@ -5,8 +5,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-    <TextView
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Коллекции" />
+        android:orientation="horizontal"
+        android:paddingTop="41dp"
+        android:paddingBottom="15dp"
+        android:paddingLeft="72dp"
+        android:paddingRight="16dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_horizontal"
+            android:text="Коллекции"
+            android:textSize="20dp"
+            android:layout_marginTop="13dp"
+            android:textStyle="bold"
+            android:lineHeight="32dp" />
+
+        <ImageButton
+            android:id="@+id/add_collection_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="#0000"
+            android:src="@drawable/plus_icon" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/collections_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>
