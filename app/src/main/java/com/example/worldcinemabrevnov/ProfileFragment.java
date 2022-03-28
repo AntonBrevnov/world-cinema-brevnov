@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,6 +37,7 @@ public class ProfileFragment extends Fragment {
     private TextView mEmail;
 
     private Button mSignOutButton;
+    private LinearLayout mDiscussionsLayoutButton;
 
     ApiService service = ApiHandler.getInstance().getService();
 
@@ -70,6 +72,14 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 signOut();
+            }
+        });
+
+        mDiscussionsLayoutButton = view.findViewById(R.id.discussions_button);
+        mDiscussionsLayoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.mainFrameLayout, new DiscussionsFragment()).commit();
             }
         });
     }
