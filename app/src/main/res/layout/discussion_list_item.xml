@@ -11,6 +11,7 @@
         android:layout_marginRight="16dp"
         app:cardBackgroundColor="#EF3A01">
         <TextView
+            android:id="@+id/discussion_cut_title"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
@@ -27,7 +28,7 @@
         android:paddingBottom="3dp"
         android:orientation="vertical">
         <TextView
-            android:id="@+id/discussions_title"
+            android:id="@+id/discussion_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Movie title"
@@ -40,13 +41,15 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <TextView
-                android:id="@+id/user_name"
-                android:layout_width="wrap_content"
+                android:id="@+id/last_message"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="User:"
-                android:textStyle="bold"
+                android:text="Last message"
                 android:textColor="#fff"
+                android:textStyle="bold"
                 android:textSize="14dp"
+                android:ellipsize="end"
+                android:maxLines="2"
                 android:lineHeight="18dp" />
         </LinearLayout>
     </LinearLayout>

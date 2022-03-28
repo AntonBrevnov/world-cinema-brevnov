@@ -1,39 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".MainActivity">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:padding="16dp">
-
         <ImageButton
             android:id="@+id/button_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="32dp"
             android:background="#0000"
-            app:srcCompat="@drawable/arrow_back" />
+            android:src="@drawable/arrow_back" />
 
         <TextView
+            android:id="@+id/chat_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:lineHeight="32dp"
-            android:text="Обсуждения"
+            android:text="Chat"
             android:textSize="20dp"
             android:textStyle="bold" />
     </LinearLayout>
 
     <ListView
-        android:id="@+id/chats_container"
+        android:id="@+id/chat_list_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingBottom="56dp"/>
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </LinearLayout>
 </LinearLayout>
