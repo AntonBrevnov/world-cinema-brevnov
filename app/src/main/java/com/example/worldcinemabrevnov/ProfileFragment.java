@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.worldcinemabrevnov.data.DataManager;
 import com.example.worldcinemabrevnov.network.ApiHandler;
 import com.example.worldcinemabrevnov.network.ErrorUtils;
 import com.example.worldcinemabrevnov.network.models.UserResponse;
@@ -102,6 +103,7 @@ public class ProfileFragment extends Fragment {
                         Picasso.with(getContext())
                                 .load("http://cinema.areas.su/up/images/" + response.body().get(0).getAvatar()).into(mAvatar);
                         mUserName.setText(response.body().get(0).getFirstName() + " " + response.body().get(0).getLastName());
+                        DataManager.setUserName(response.body().get(0).getFirstName() + " " + response.body().get(0).getLastName());
                         mEmail.setText(response.body().get(0).getEmail());
                     } else if (response.code() == 400) {
                         String serverErrorMessage = ErrorUtils.parseError(response).message();

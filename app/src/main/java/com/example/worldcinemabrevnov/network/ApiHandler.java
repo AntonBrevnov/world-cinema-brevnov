@@ -25,7 +25,8 @@ public class ApiHandler {
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
 
         OkHttpClient client = new OkHttpClient.Builder()
-                .addInterceptor(interceptor).addInterceptor(new Interceptor() {
+                .addInterceptor(interceptor)
+                .addInterceptor(new Interceptor() {
                     @Override
                     public Response intercept(Chain chain) throws IOException {
                         Request request = chain.request().newBuilder()

@@ -31,7 +31,7 @@ import retrofit2.Response;
 
 public class DiscussionsFragment extends Fragment {
 
-    DiscussionsListItem discussion;
+    List<DiscussionsListItem> discussions;
     private DiscussionsListAdapter adapter;
     private ListView mDiscussionsListView;
 
@@ -51,17 +51,25 @@ public class DiscussionsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_discussions, container, false);
-        fetchDiscussionsList();
         InitUI(view);
+        fetchDiscussionsList();
         return view;
     }
 
     private void InitUI(View view) {
         mDiscussionsListView = view.findViewById(R.id.chats_container);
+        discussions = new ArrayList<>();
+        adapter = new DiscussionsListAdapter(getContext(), discussions);
+        mDiscussionsListView.setAdapter(adapter);
         mDiscussionsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                ChatFragment chat = new ChatFragment();
 
+                Bundle bundle = new Bundle();
+                bundle.putString("chatId", discussions.get(i).getChatId());
+                chat.setArguments(bundle);
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.mainFrameLayout, chat).commit();
             }
         });
 
@@ -81,10 +89,8 @@ public class DiscussionsFragment extends Fragment {
                 public void onResponse(Call<List<ChatsResponse>> call, Response<List<ChatsResponse>> response) {
                     if (response.isSuccessful()) {
                         List<ChatsResponse> chats = response.body();
-                        List<DiscussionsListItem> data = fetchChatInfoToPreview(chats);
-
-                        adapter = new DiscussionsListAdapter(getContext(), data);
-                        mDiscussionsListView.setAdapter(adapter);
+                        fetchChatInfoToPreview(chats);
+                        adapter.notifyDataSetChanged();
                     } else if (response.code() == 400) {
                         String serverErrorMessage = ErrorUtils.parseError(response).message();
                         Toast.makeText(getContext(), serverErrorMessage, Toast.LENGTH_SHORT).show();
@@ -101,11 +107,9 @@ public class DiscussionsFragment extends Fragment {
         });
     }
 
-    private List<DiscussionsListItem> fetchChatInfoToPreview(List<ChatsResponse> chats) {
-        List<DiscussionsListItem> discussions = new ArrayList<>();
-
+    private void fetchChatInfoToPreview(List<ChatsResponse> chats) {
         for (int i = 0; i < chats.size(); i++) {
-            discussion = new DiscussionsListItem();
+            DiscussionsListItem discussion = new DiscussionsListItem();
             discussion.setChatId(chats.get(i).getCharId());
             discussion.setDiscussionTitle(chats.get(i).getName());
             service.fetchChat(chats.get(i).getCharId()).enqueue(new Callback<List<ChatResponse>>() {
@@ -131,7 +135,5 @@ public class DiscussionsFragment extends Fragment {
             });
             discussions.add(discussion);
         }
-
-        return discussions;
     }
 }

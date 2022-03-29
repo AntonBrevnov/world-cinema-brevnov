@@ -5,8 +5,11 @@
       <map>
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/WorldCinemaBrevnov/app/src/main/res/drawable/bottom_navigation_selector.xml" value="0.1175" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/WorldCinemaBrevnov/app/src/main/res/drawable/button_rounded.xml" value="0.196" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/WorldCinemaBrevnov/app/src/main/res/drawable/current_user_message_rounded_borders.xml" value="0.2975" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/WorldCinemaBrevnov/app/src/main/res/drawable/image_rounded.xml" value="0.118" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/WorldCinemaBrevnov/app/src/main/res/drawable/input_border.xml" value="0.1375" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/WorldCinemaBrevnov/app/src/main/res/drawable/message_rounded_borders.xml" value="0.2975" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/WorldCinemaBrevnov/app/src/main/res/drawable/other_user_message_rounded_borders.xml" value="0.2975" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/WorldCinemaBrevnov/app/src/main/res/drawable/primary_button_rounded.xml" value="0.1995" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/WorldCinemaBrevnov/app/src/main/res/drawable/secondary_button_rounded.xml" value="0.196" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/WorldCinemaBrevnov/app/src/main/res/drawable/sign_in_screen_logo.xml" value="0.1995" />
@@ -15,14 +18,16 @@
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/WorldCinemaBrevnov/app/src/main/res/layout/activity_sign_in.xml" value="0.2" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/WorldCinemaBrevnov/app/src/main/res/layout/activity_sign_up.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/WorldCinemaBrevnov/app/src/main/res/layout/collections_list_item.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/WorldCinemaBrevnov/app/src/main/res/layout/current_user_message.xml" value="0.33" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/WorldCinemaBrevnov/app/src/main/res/layout/discussion_list_item.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Administrator/AndroidStudioProjects/WorldCinemaBrevnov/app/src/main/res/layout/fragment_chat.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/WorldCinemaBrevnov/app/src/main/res/layout/fragment_chat.xml" value="0.22" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/WorldCinemaBrevnov/app/src/main/res/layout/fragment_discussions.xml" value="0.14" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/WorldCinemaBrevnov/app/src/main/res/layout/fragment_favorite.xml" value="0.2" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/WorldCinemaBrevnov/app/src/main/res/layout/fragment_home.xml" value="0.18614130434782608" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/WorldCinemaBrevnov/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/WorldCinemaBrevnov/app/src/main/res/layout/fragment_query.xml" value="0.18614130434782608" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/WorldCinemaBrevnov/app/src/main/res/layout/movies_list_item.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/WorldCinemaBrevnov/app/src/main/res/layout/other_user_message.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/WorldCinemaBrevnov/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.18802083333333333" />
       </map>
     </option>

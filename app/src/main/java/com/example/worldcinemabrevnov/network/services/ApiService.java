@@ -3,6 +3,7 @@ package com.example.worldcinemabrevnov.network.services;
 import com.example.worldcinemabrevnov.network.models.ChatResponse;
 import com.example.worldcinemabrevnov.network.models.ChatsResponse;
 import com.example.worldcinemabrevnov.network.models.MovieResponse;
+import com.example.worldcinemabrevnov.network.models.SendMessageBody;
 import com.example.worldcinemabrevnov.network.models.SignInBody;
 import com.example.worldcinemabrevnov.network.models.SignInResponse;
 import com.example.worldcinemabrevnov.network.models.SignUpBody;
@@ -38,4 +39,7 @@ public interface ApiService {
 
     @GET("chats/{chatId}/messages")
     Call<List<ChatResponse>> fetchChat(@Path("chatId") String chatId);
+
+    @POST("chats/{chatId}/messages")
+    Call<ResponseBody> sendMessage(@Path("chatId") String chatId, @Body SendMessageBody body);
 }
